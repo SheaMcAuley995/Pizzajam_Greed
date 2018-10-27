@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemObjects : MonoBehaviour {
+[CreateAssetMenu(fileName = "Ingredient",menuName = "Ingredient", order = 0)]
+public class ItemObjects : ScriptableObject {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public new string name;
+    public Sprite sprite;
+    public int scoreBonus;
 }
