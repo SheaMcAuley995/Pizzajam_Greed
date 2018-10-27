@@ -10,20 +10,19 @@ public class CharacterInventory : MonoBehaviour {
     public int space = 10;
     public List<ItemObjects> items { private set; get; }
 
-    public bool Add(ItemObjects item)
+    private void Start()
     {
-        if(!item.isEmptyItem)
-        {
-            if(items.Count >= space)
-            {
-                return false;
-            }
-            items.Add(item);
-        }
-        return true;
+        items = new List<ItemObjects>();
+    }
+
+    public void AddObject(ItemObjects item)
+    {
+        items.Add(item);
     }
     public void Remove(ItemObjects item)
     {
         items.Remove(item);
     }
+
 }
+
