@@ -2,18 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class ItemPickup : MonoBehaviour {
 
-    public ItemObjects item;
+    [SerializeField] ItemObjects item;
     private CharacterInventory inventory;
 
     private void Start()
     {
-        inventory = GetComponent<CharacterInventory>();
+        item.isEmptyItem = false;
+        name = item.name;
+        GetComponent<SpriteRenderer>().sprite = item.sprite;
     }
 
-    private void Pickup()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        inventory
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            inventory = collision.gameObject.GetComponent<CharacterInventory>();
+
+            bool wasPickedup = inventory.Add(item);
+
+            if (wasPickedup)
+                Destroy(collision.gameObject);
+        }
     }
 }

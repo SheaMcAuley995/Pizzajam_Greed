@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterInventory : MonoBehaviour {
 
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+
     public int space = 10;
     public List<ItemObjects> items { private set; get; }
 
