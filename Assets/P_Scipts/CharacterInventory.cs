@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour {
+public class CharacterInventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
