@@ -17,6 +17,7 @@ public class CharacterInventory : MonoBehaviour {
 
     public void AddObject(ItemObjects item)
     {
+        foreach(ItemObjects itemobj in items)
         items.Add(item);
     }
     public void Remove(ItemObjects item)
