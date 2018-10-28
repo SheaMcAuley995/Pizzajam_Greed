@@ -11,7 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8240dad86bf7d3b4e9e6cc5abd912291, type: 3}
   m_Name: Ingredient_Second
   m_EditorClassIdentifier: 
-  name: Coin
-  sprite: {fileID: 21300000, guid: 4faacd3741fa9974ea7b0f8f5aff0b8e, type: 3}
+  name: ChocolateSkull
   scoreBonus: 25
-  isEmptyItem: 1
+  isEmptyItem: 0
