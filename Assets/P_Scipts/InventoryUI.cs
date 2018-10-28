@@ -28,7 +28,7 @@ public class InventoryUI : MonoBehaviour {
         MultiplierNum.text = inventory.scoreModifier.ToString();
         foreach(ItemObjects obj in inventory.items)
         {
-            if(obj.name == "Ball")
+            if(obj.name == "CandyCorn")
             {
                 num1++;
             }

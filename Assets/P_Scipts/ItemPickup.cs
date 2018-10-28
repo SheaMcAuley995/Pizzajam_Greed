@@ -12,7 +12,7 @@ public class ItemPickup : MonoBehaviour
     {
         item.isEmptyItem = false;
         name = item.name;
-        GetComponent<SpriteRenderer>().sprite = item.sprite;
+       // GetComponent<SpriteRenderer>().sprite = item.sprite;
     }
 
     void pickUp(CharacterInventory inventory)

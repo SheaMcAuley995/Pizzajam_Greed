@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemObjects : ScriptableObject {
 
     public new string name = "";
-    public Sprite sprite = null;
+   // public Sprite sprite = null;
     public int scoreBonus = 0;
     public bool isEmptyItem = true;
 }
