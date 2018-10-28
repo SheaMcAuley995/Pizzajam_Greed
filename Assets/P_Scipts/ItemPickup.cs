@@ -20,15 +20,16 @@ public class ItemPickup : MonoBehaviour
         inventory.AddObject(item);
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log(collision.gameObject.name);
             pickUp(collision.gameObject.GetComponent<CharacterInventory>());
             Destroy(gameObject);
         }
     }
+
 
 }
 
