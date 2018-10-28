@@ -6,8 +6,6 @@ public class CharacterInventory : MonoBehaviour {
 
     [SerializeField] playerNumber my_Player;
 
-    public delegate void OnItemChanged();
-    public OnItemChanged onItemChangedCallback;
 
     public int space = 10;
     public List<ItemObjects> items { private set; get; }

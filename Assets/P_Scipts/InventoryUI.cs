@@ -25,7 +25,7 @@ public class InventoryUI : MonoBehaviour {
         int num3 = 0;
 
         
-        MultiplierNum.text = inventory.scoreModifier.ToString();
+        MultiplierNum.text = "Multiplier: x " + inventory.scoreModifier.ToString();
         foreach(ItemObjects obj in inventory.items)
         {
             if(obj.name == "CandyCorn")
