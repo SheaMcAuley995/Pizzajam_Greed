@@ -10,17 +10,18 @@ public class PlayerAssignment : MonoBehaviour
     public PlayerController player4;
     private void Start()
     {
-        assign();
+        StartCoroutine(AssignThem());
     }
 
 
     IEnumerator AssignThem()
     {
-        assign();
         yield return new WaitForSeconds(2);
+        assign();
+      
 
     }
-    void assign()
+   public void assign()
     {
         player1.playerIndex = XInputDotNetPure.PlayerIndex.One;
         player2.playerIndex = XInputDotNetPure.PlayerIndex.Two;
