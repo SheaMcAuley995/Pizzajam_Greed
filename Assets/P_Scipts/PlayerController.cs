@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
     GamePadState state;
     GamePadState prevState;
     ObjectMotor motor;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
         motor = GetComponent<ObjectMotor>();
+        anim = GetComponent<Animator>();
     }
 
 
