@@ -13,12 +13,16 @@ public class PlayerController : MonoBehaviour
     GamePadState prevState;
     ObjectMotor motor;
     Animator anim;
+     SpriteRenderer spriteRender;
+    [SerializeField]
+    bool isLeft = false;
 
     // Use this for initialization
     void Start()
     {
         motor = GetComponent<ObjectMotor>();
         anim = GetComponent<Animator>();
+        spriteRender = GetComponent<SpriteRenderer>();
     }
 
 
@@ -44,9 +48,31 @@ public class PlayerController : MonoBehaviour
 
         prevState = state;
         state = GamePad.GetState(playerIndex);
-        Debug.Log(playerIndex + " = player index");
-        
-        
+
+        if (state.ThumbSticks.Left.X > 0)
+        {
+            isLeft = false;
+
+        }
+        else if(state.ThumbSticks.Left.X < 0)
+        {
+            isLeft = true;
+        }
+        if (isLeft)
+        {
+            spriteRender.flipX = true;
+        }
+        else if (!isLeft)
+        { spriteRender.flipX = false; }
+
+        if (state.ThumbSticks.Left.X != 0 || state.ThumbSticks.Left.Y != 0)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
         motor.Move(state.ThumbSticks.Left.X, state.ThumbSticks.Left.Y);
 
     }

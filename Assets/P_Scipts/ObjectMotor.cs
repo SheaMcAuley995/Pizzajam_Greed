@@ -15,7 +15,7 @@ public class ObjectMotor : MonoBehaviour {
         box = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
 
-
+        anim = GetComponent<Animator>();
     }
 
     public void Move(float xDir, float yDir)
@@ -23,7 +23,7 @@ public class ObjectMotor : MonoBehaviour {
         Vector2 dir = new Vector2(xDir, yDir) * Time.deltaTime * moveSpeed;
 
         rb.MovePosition((Vector2)transform.position + dir);
-        if (rb.velocity.x > 0 || rb.velocity.y > 0)
+        if (rb.velocity.x > 0)
         {
             anim.SetBool("isWalking", true);
         }
