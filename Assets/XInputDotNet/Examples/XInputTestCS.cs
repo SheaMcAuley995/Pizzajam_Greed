@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 using XInputDotNetPure; // Required in C#
 
 public class XInputTestCS : MonoBehaviour
@@ -44,19 +44,7 @@ public class XInputTestCS : MonoBehaviour
         prevState = state;
         state = GamePad.GetState(playerIndex);
 
-        // Detect if a button was pressed this frame
-        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
-        {
-            GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-        }
-        // Detect if a button was released this frame
-        if (prevState.Buttons.A == ButtonState.Pressed && state.Buttons.A == ButtonState.Released)
-        {
-            GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        }
-
-        // Make the current object turn
-        transform.localRotation *= Quaternion.Euler(0.0f, state.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
+        
     }
 
     void OnGUI()
@@ -72,4 +60,3 @@ public class XInputTestCS : MonoBehaviour
         GUI.Label(new Rect(0, 0, Screen.width, Screen.height), text);
     }
 }
-*/
